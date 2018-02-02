@@ -15,8 +15,9 @@ echo $vDownloadsDir
 
 echo "==== Checking vagrant dir ..."
 if [ -d /vagrant ]; then
-    echo "/vagrant dir is present. Using ..."
+    echo "/vagrant dir is present. Using:"
     vDownloadsDir="/vagrant/downloads"
+    echo $vDownloadsDir
 fi
 
 echo "==== Creating downloads dir ..."
