@@ -3,6 +3,9 @@
 vFileName="$0"
 vDirName=`dirname $vFileName`
 
+windflyDirName="wildfly-8.2.1.Final"
+windflyDownloadUrl="http://download.jboss.org/wildfly/8.2.1.Final/wildfly-8.2.1.Final.zip"
+
 echo "==== File name:"
 echo $vFileName
 
@@ -27,18 +30,18 @@ echo "==== Go to downloads dir ..."
 cd $vDownloadsDir
 pwd
 
-echo "==== Checking wildfly-8.2.1.Final.zip ..."
-if [ -f "./wildfly-8.2.1.Final.zip" ]; then
+echo "==== Checking $windflyDirName.zip ..."
+if [ -f "./$windflyDirName.zip" ]; then
     echo "File is present"
 else
-    echo "Downloading http://download.jboss.org/wildfly/8.2.1.Final/wildfly-8.2.1.Final.zip ..."
-    wget -q "http://download.jboss.org/wildfly/8.2.1.Final/wildfly-8.2.1.Final.zip"
+    echo "Downloading $windflyDownloadUrl ..."
+    wget -q "$windflyDownloadUrl"
 fi
 
-echo "==== Unzipping wildfly-8.2.1.Final.zip ..."
-if [ -d "wildfly-8.2.1.Final" ]; then
-    echo "./wildfly-8.2.1.Final is present. Skipping unzip ..."
+echo "==== Unzipping $windflyDirName.zip ..."
+if [ -d "$windflyDirName" ]; then
+    echo "./$windflyDirName is present. Skipping unzip ..."
 else
     apt-get install -y unzip
-    unzip wildfly-8.2.1.Final.zip
+    unzip $windflyDirName.zip
 fi
