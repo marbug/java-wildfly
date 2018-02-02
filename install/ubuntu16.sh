@@ -5,6 +5,7 @@ vDirName=`dirname $vFileName`
 
 windflyDirName="wildfly-8.2.1.Final"
 windflyDownloadUrl="http://download.jboss.org/wildfly/8.2.1.Final/wildfly-8.2.1.Final.zip"
+javaDirName="jdk1.8.0_161"
 
 echo "==== File name:"
 echo $vFileName
@@ -45,3 +46,15 @@ else
     apt-get install -y unzip
     unzip $windflyDirName.zip
 fi
+
+echo "==== Checking java dir ..."
+if [ -d "$vDownloadsDir/$javaDirName" ]; then
+    echo "Dir $vDownloadsDir/$javaDirName is present"
+else
+    echo "Download and extract jdk to $vDownloadsDir/$javaDirName"
+    exit 1
+fi
+
+echo "==== Setting JAVA_HOME env variable ..."
+export JAVA_HOME="$vDownloadsDir/$javaDirName"
+echo "JAVA_HOME:" $JAVA_HOME
