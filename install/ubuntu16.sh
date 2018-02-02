@@ -5,7 +5,7 @@ vDirName=`dirname $vFileName`
 
 windflyDirName="wildfly-8.2.1.Final"
 windflyDownloadUrl="http://download.jboss.org/wildfly/8.2.1.Final/wildfly-8.2.1.Final.zip"
-javaDirName="jdk1.8.0_161"
+jdkDirName="jdk1.8.0_161"
 programsPath="/home/ubuntu/programs"
 
 echo "==== File name:"
@@ -60,17 +60,25 @@ else
     echo $programsPath/$windflyDirName
 fi
 
-echo "==== Checking java dir ..."
-if [ -d "$vDownloadsDir/$javaDirName" ]; then
-    echo "Dir $vDownloadsDir/$javaDirName is present"
+echo "==== Checking jdk dir ..."
+if [ -d "$vDownloadsDir/$jdkDirName" ]; then
+    echo "Dir $vDownloadsDir/$jdkDirName is present"
 else
-    echo "Please, download and extract jdk to $vDownloadsDir/$javaDirName"
+    echo "Please, download and extract jdk to $vDownloadsDir/$jdkDirName"
     exit 1
 fi
 
 echo "==== Setting JAVA_HOME env variable ..."
-export JAVA_HOME="$vDownloadsDir/$javaDirName"
+export JAVA_HOME="$vDownloadsDir/$jdkDirName"
 echo "JAVA_HOME:" $JAVA_HOME
+
+echo "==== Copy $jdkDirName to programs dir ..."
+if [ -d "$programsPath/$jdkDirName" ]; then
+    echo "$programsPath/$jdkDirName is present. Skipped."
+else
+    cp -R "./$jdkDirName" "$programsPath/$jdkDirName"
+    echo $programsPath/$jdkDirName
+fi
 
 echo "==== Running windfly ..."
 cd "$vDownloadsDir/$windflyDirName"
