@@ -3,3 +3,4 @@ Vagrantfile
 downloads
 *.log
 *.log.*
+.vagrant

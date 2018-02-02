@@ -6,6 +6,7 @@ vDirName=`dirname $vFileName`
 windflyDirName="wildfly-8.2.1.Final"
 windflyDownloadUrl="http://download.jboss.org/wildfly/8.2.1.Final/wildfly-8.2.1.Final.zip"
 javaDirName="jdk1.8.0_161"
+programsPath="/home/ubuntu/programs"
 
 echo "==== File name:"
 echo $vFileName
@@ -40,18 +41,30 @@ else
 fi
 
 echo "==== Unzipping $windflyDirName.zip ..."
-if [ -d "$windflyDirName" ]; then
-    echo "./$windflyDirName is present. Skipping unzip ..."
+if [ -d "$vDownloadsDir/$windflyDirName" ]; then
+    echo "$vDownloadsDir/$windflyDirName is present. Skipping unzip ..."
 else
     apt-get install -y unzip
     unzip $windflyDirName.zip
+fi
+
+echo "==== Checking programs dir ..."
+echo $programsPath
+mkdir -p $programsPath
+
+echo "==== Copy $windflyDirName to programs dir ..."
+if [ -d "$programsPath/$windflyDirName" ]; then
+    echo "$programsPath/$windflyDirName is present. Skipped."
+else
+    cp -R "./$windflyDirName" "$programsPath/$windflyDirName"
+    echo $programsPath/$windflyDirName
 fi
 
 echo "==== Checking java dir ..."
 if [ -d "$vDownloadsDir/$javaDirName" ]; then
     echo "Dir $vDownloadsDir/$javaDirName is present"
 else
-    echo "Download and extract jdk to $vDownloadsDir/$javaDirName"
+    echo "Please, download and extract jdk to $vDownloadsDir/$javaDirName"
     exit 1
 fi
 
