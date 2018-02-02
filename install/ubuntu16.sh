@@ -34,3 +34,11 @@ else
     echo "Downloading http://download.jboss.org/wildfly/8.2.1.Final/wildfly-8.2.1.Final.zip ..."
     wget -q "http://download.jboss.org/wildfly/8.2.1.Final/wildfly-8.2.1.Final.zip"
 fi
+
+echo "==== Unzipping wildfly-8.2.1.Final.zip ..."
+if [ -d "wildfly-8.2.1.Final" ]; then
+    echo "./wildfly-8.2.1.Final is present. Skipping unzip ..."
+else
+    apt-get install -y unzip
+    unzip wildfly-8.2.1.Final.zip
+fi
