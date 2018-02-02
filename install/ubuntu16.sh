@@ -62,4 +62,4 @@ echo "JAVA_HOME:" $JAVA_HOME
 echo "==== Running windfly ..."
 cd "$vDownloadsDir/$windflyDirName"
 pwd
-./bin/standalone.sh
+./bin/standalone.sh &
