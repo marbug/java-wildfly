@@ -58,3 +58,8 @@ fi
 echo "==== Setting JAVA_HOME env variable ..."
 export JAVA_HOME="$vDownloadsDir/$javaDirName"
 echo "JAVA_HOME:" $JAVA_HOME
+
+echo "==== Running windfly ..."
+cd "$vDownloadsDir/$windflyDirName"
+pwd
+./bin/standalone.sh
