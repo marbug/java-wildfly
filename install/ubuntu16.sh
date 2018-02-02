@@ -83,8 +83,8 @@ fi
 
 echo "==== Fixing permissions ..."
 chown -R ubuntu:ubuntu $programsPath
-# chmod 0777 "$programsPath/$windflyDirName/standalone/data/content"
-chmod 0777 "$programsPath/$windflyDirName"
+# chmod -R 0777 "$programsPath/$windflyDirName/standalone/data/content"
+chmod -R 0777 "$programsPath/$windflyDirName"
 
 echo "==== Running windfly ..."
 cd "$vDownloadsDir/$windflyDirName"
