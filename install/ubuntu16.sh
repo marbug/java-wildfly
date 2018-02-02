@@ -26,3 +26,11 @@ mkdir -p $vDownloadsDir
 echo "==== Go to downloads dir ..."
 cd $vDownloadsDir
 pwd
+
+echo "==== Checking wildfly-8.2.1.Final.zip ..."
+if [ -f "./wildfly-8.2.1.Final.zip" ]; then
+    echo "File is present"
+else
+    echo "Downloading http://download.jboss.org/wildfly/8.2.1.Final/wildfly-8.2.1.Final.zip ..."
+    wget -c http://download.jboss.org/wildfly/8.2.1.Final/wildfly-8.2.1.Final.zip
+fi
