@@ -12,3 +12,4 @@ TODO
 * [VirtualBox download page](https://www.virtualbox.org/wiki/Downloads)
 * [Windfly official site](http://wildfly.org/)
 * [Windfly download page](http://wildfly.org/downloads/)
+* [Java 8 JDK download page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
