@@ -32,5 +32,5 @@ if [ -f "./wildfly-8.2.1.Final.zip" ]; then
     echo "File is present"
 else
     echo "Downloading http://download.jboss.org/wildfly/8.2.1.Final/wildfly-8.2.1.Final.zip ..."
-    wget -c http://download.jboss.org/wildfly/8.2.1.Final/wildfly-8.2.1.Final.zip
+    wget -q "http://download.jboss.org/wildfly/8.2.1.Final/wildfly-8.2.1.Final.zip"
 fi
