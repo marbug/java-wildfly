@@ -71,6 +71,7 @@ fi
 echo "==== Setting JAVA_HOME env variable ..."
 export JAVA_HOME="$vDownloadsDir/$jdkDirName"
 echo "JAVA_HOME:" $JAVA_HOME
+echo "JAVA_HOME=\"$JAVA_HOME\"" >> /etc/environment
 
 echo "==== Copy $jdkDirName to programs dir ..."
 if [ -d "$programsPath/$jdkDirName" ]; then
@@ -79,6 +80,9 @@ else
     cp -R "./$jdkDirName" "$programsPath/$jdkDirName"
     echo $programsPath/$jdkDirName
 fi
+
+echo "==== Fixing permissions ..."
+chown -R ubuntu:ubuntu $programsPath
 
 echo "==== Running windfly ..."
 cd "$vDownloadsDir/$windflyDirName"
