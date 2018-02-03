@@ -101,8 +101,8 @@ echo "New file:"
 ls -l "$programsPath/$wildflyDirName/bin/init.d/wildfly.conf"
 
 echo "==== Copy bin/init.d/wildfly-init-debian.sh to $programsPath/$wildflyDirName/bin/init.d/wildfly.conf dir ..."
-ls -l "$programsPath/bin/init.d/wildfly-init-debian.sh"
-cp -R "$programsPath/bin/init.d/wildfly-init-debian.sh" "/etc/init.d/wildfly"
+ls -l "$programsPath/$wildflyDirName/bin/init.d/wildfly-init-debian.sh"
+cp -R "$programsPath/$wildflyDirName/bin/init.d/wildfly-init-debian.sh" "/etc/init.d/wildfly"
 ls -l "/etc/init.d/wildfly"
 
 echo "==== Fixing permissions ..."
