@@ -110,4 +110,5 @@ chown -R ubuntu:ubuntu $programsPath
 # chmod -R 0777 "$programsPath/$wildflyDirName/standalone/data/content"
 chmod -R 0777 "$programsPath/$wildflyDirName"
 
+echo "==== Reboot ..."
 reboot
