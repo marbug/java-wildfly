@@ -81,6 +81,13 @@ else
     echo $programsPath/$jdkDirName
 fi
 
+echo "==== Copy windfly.conf to $programsPath/$windflyDirName/bin/init.d/windfly.conf dir ..."
+echo "Old file:"
+ls -l "$programsPath/$windflyDirName/bin/init.d/windfly.conf"
+cp -R "$vDirName/install/windfly.conf" "$programsPath/$windflyDirName/bin/init.d/windfly.conf"
+echo "New file:"
+ls -l "$programsPath/$windflyDirName/bin/init.d/windfly.conf"
+
 echo "==== Fixing permissions ..."
 chown -R ubuntu:ubuntu $programsPath
 # chmod -R 0777 "$programsPath/$windflyDirName/standalone/data/content"
