@@ -82,8 +82,8 @@ echo "JAVA_HOME=\"$JAVA_HOME\"" >> /etc/environment
 
 echo "==== Setting JBOSS_HOME env variable ..."
 export JBOSS_HOME="$programsPath/$wildflyDirName"
-echo "JAVA_HOME:" $JBOSS_HOME
-echo "JAVA_HOME=\"$JBOSS_HOME\"" >> /etc/environment
+echo "JBOSS_HOME:" $JBOSS_HOME
+echo "JBOSS_HOME=\"$JBOSS_HOME\"" >> /etc/environment
 
 echo "==== Copy $jdkDirName to programs dir ..."
 if [ -d "$programsPath/$jdkDirName" ]; then
