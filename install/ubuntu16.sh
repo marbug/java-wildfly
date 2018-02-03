@@ -91,7 +91,7 @@ fi
 echo "==== Copy wildfly.conf to $programsPath/$wildflyDirName/bin/init.d/wildfly.conf dir ..."
 echo "Old file:"
 ls -l "$programsPath/$wildflyDirName/bin/init.d/wildfly.conf"
-cp -R "$vDirName/install/wildfly.conf" "$programsPath/$wildflyDirName/bin/init.d/wildfly.conf"
+cp -R "$vDirName/wildfly.conf" "$programsPath/$wildflyDirName/bin/init.d/wildfly.conf"
 echo "New file:"
 ls -l "$programsPath/$wildflyDirName/bin/init.d/wildfly.conf"
 
