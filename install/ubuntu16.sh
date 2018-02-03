@@ -107,6 +107,6 @@ chown -R ubuntu:ubuntu $wildFlyToPath
 chmod -R 0777 "$wildFlyToPath"
 
 echo "==== Running service ..."
-apt install -y upstart
+apt-get install -y upstart
 initctl reload-configuration
 service wildfly start
