@@ -2,7 +2,7 @@
 
 ## Prepare software ##
 
-Please ensure that you have installed the latest versions of Vagrant and VirtualBox.
+Please ensure that you have installed the latest versions of Docker, Vagrant and VirtualBox.
 
 TODO
 
