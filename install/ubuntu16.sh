@@ -100,6 +100,7 @@ ls -l "/etc/default/wildfly"
 echo "==== Copy bin/init.d/wildfly-init-debian.sh to $wildFlyToPath/bin/init.d/wildfly dir ..."
 ls -l "$wildFlyToPath/bin/init.d/wildfly-init-debian.sh"
 cp -R "$wildFlyToPath/bin/init.d/wildfly-init-debian.sh" "/etc/init.d/wildfly"
+chmod 0700 /etc/init.d/wildfly
 ls -l "/etc/init.d/wildfly"
 
 echo "==== Fixing permissions ..."
@@ -107,6 +108,6 @@ chown -R ubuntu:ubuntu $wildFlyToPath
 chmod -R 0777 "$wildFlyToPath"
 
 echo "==== Running service ..."
-apt-get install -y upstart
-initctl reload-configuration
+udpate-rc.d wildfly enable
 service wildfly start
+service wildfly status
