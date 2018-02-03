@@ -76,9 +76,14 @@ else
 fi
 
 echo "==== Setting JAVA_HOME env variable ..."
-export JAVA_HOME="$vDownloadsDir/$jdkDirName"
+export JAVA_HOME="$programsPath/$jdkDirName"
 echo "JAVA_HOME:" $JAVA_HOME
 echo "JAVA_HOME=\"$JAVA_HOME\"" >> /etc/environment
+
+echo "==== Setting JBOSS_HOME env variable ..."
+export JBOSS_HOME="$programsPath/$wildflyDirName"
+echo "JAVA_HOME:" $JBOSS_HOME
+echo "JAVA_HOME=\"$JBOSS_HOME\"" >> /etc/environment
 
 echo "==== Copy $jdkDirName to programs dir ..."
 if [ -d "$programsPath/$jdkDirName" ]; then
@@ -88,19 +93,21 @@ else
     echo $programsPath/$jdkDirName
 fi
 
-echo "==== Copy wildfly.conf to $programsPath/$wildflyDirName/bin/init.d/wildfly.conf dir ..."
+echo "==== Copy wildfly.conf to $programsPath/$wildflyDirName/bin/init.d/wildfly.conf ..."
 echo "Old file:"
 ls -l "$programsPath/$wildflyDirName/bin/init.d/wildfly.conf"
 cp -R "$vDirName/wildfly.conf" "$programsPath/$wildflyDirName/bin/init.d/wildfly.conf"
 echo "New file:"
 ls -l "$programsPath/$wildflyDirName/bin/init.d/wildfly.conf"
 
+echo "==== Copy bin/init.d/wildfly-init-debian.sh to $programsPath/$wildflyDirName/bin/init.d/wildfly.conf dir ..."
+ls -l "$programsPath/bin/init.d/wildfly-init-debian.sh"
+cp -R "$programsPath/bin/init.d/wildfly-init-debian.sh" "/etc/init.d/wildfly"
+ls -l "/etc/init.d/wildfly"
+
 echo "==== Fixing permissions ..."
 chown -R ubuntu:ubuntu $programsPath
 # chmod -R 0777 "$programsPath/$wildflyDirName/standalone/data/content"
 chmod -R 0777 "$programsPath/$wildflyDirName"
 
-echo "==== Running wildfly ..."
-cd "$vDownloadsDir/$wildflyDirName"
-pwd
-./bin/standalone.sh &
+reboot
