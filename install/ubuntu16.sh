@@ -17,7 +17,7 @@ echo $vDirName
 echo "==== Checking /vagrant dir ..."
 if [ -d /vagrant ]; then
     echo "/vagrant dir is present. Using:"
-    $vDirName="/vagrant/install"
+    vDirName="/vagrant/install"
     echo $vDirName
 fi
 
