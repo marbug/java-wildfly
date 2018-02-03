@@ -1,7 +1,7 @@
 #!/bin/sh
 
-vFileName="$0"
-vDirName=`dirname $vFileName`
+scriptFilePath="$0"
+scriptDirPath=`dirname $scriptFilePath`
 
 wildflyFromDir="wildfly-8.2.1.Final"
 wildflyToDir="wildfly"
@@ -11,20 +11,20 @@ programsPath="/home/ubuntu/programs"
 wildFlyToPath="/opt/$wildflyToDir"
 
 echo "==== File name:"
-echo $vFileName
+echo $scriptFilePath
 
 echo "==== Dir name:"
-echo $vDirName
+echo $scriptDirPath
 
 echo "==== Checking /vagrant dir ..."
 if [ -d /vagrant ]; then
     echo "/vagrant dir is present. Using:"
-    vDirName="/vagrant/install"
-    echo $vDirName
+    scriptDirPath="/vagrant/install"
+    echo $scriptDirPath
 fi
 
 echo "==== Downloads dir:"
-vDownloadsDir="$vDirName/../downloads"
+vDownloadsDir="$scriptDirPath/../downloads"
 echo $vDownloadsDir
 
 echo "==== Checking vagrant dir ..."
@@ -93,7 +93,7 @@ fi
 echo "==== Copy ubuntu16.wildfly.conf to /etc/default/wildfly ..."
 echo "Old file:"
 ls -l "$wildFlyToPath/bin/init.d/wildfly.conf"
-cp -R "$vDirName/ubuntu16.wildfly.conf" "/etc/default/wildfly"
+cp -R "$scriptDirPath/ubuntu16.wildfly.conf" "/etc/default/wildfly"
 echo "New file:"
 ls -l "/etc/default/wildfly"
 
