@@ -90,12 +90,12 @@ else
     echo $programsPath/$jdkDirName
 fi
 
-echo "==== Copy ubuntu16.wildfly.conf to $wildFlyToPath/bin/init.d/wildfly.conf ..."
+echo "==== Copy ubuntu16.wildfly.conf to /etc/default/wildfly ..."
 echo "Old file:"
 ls -l "$wildFlyToPath/bin/init.d/wildfly.conf"
-cp -R "$vDirName/ubuntu16.wildfly.conf" "$wildFlyToPath/bin/init.d/wildfly.conf"
+cp -R "$vDirName/ubuntu16.wildfly.conf" "/etc/default/wildfly"
 echo "New file:"
-ls -l "$wildFlyToPath/bin/init.d/wildfly.conf"
+ls -l "/etc/default/wildfly"
 
 echo "==== Copy bin/init.d/wildfly-init-debian.sh to $wildFlyToPath/bin/init.d/wildfly dir ..."
 ls -l "$wildFlyToPath/bin/init.d/wildfly-init-debian.sh"
