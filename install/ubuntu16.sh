@@ -106,4 +106,7 @@ echo "==== Fixing permissions ..."
 chown -R ubuntu:ubuntu $wildFlyToPath
 chmod -R 0777 "$wildFlyToPath"
 
-echo "==== Stop and run VM again, please !!!"
+echo "==== Running service ..."
+apt install -y upstart
+initctl reload-configuration
+service wildfly start
