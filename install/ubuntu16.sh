@@ -14,6 +14,13 @@ echo $vFileName
 echo "==== Dir name:"
 echo $vDirName
 
+echo "==== Checking /vagrant dir ..."
+if [ -d /vagrant ]; then
+    echo "/vagrant dir is present. Using:"
+    $vDirName="/vagrant/install"
+    echo $vDirName
+fi
+
 echo "==== Downloads dir:"
 vDownloadsDir="$vDirName/../downloads"
 echo $vDownloadsDir
