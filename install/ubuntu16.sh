@@ -90,23 +90,20 @@ else
     echo $programsPath/$jdkDirName
 fi
 
-echo "==== Copy wildfly.conf to $wildFlyToPath/bin/init.d/wildfly.conf ..."
+echo "==== Copy ubuntu16.wildfly.conf to $wildFlyToPath/bin/init.d/wildfly.conf ..."
 echo "Old file:"
 ls -l "$wildFlyToPath/bin/init.d/wildfly.conf"
-cp -R "$vDirName/wildfly.conf" "$wildFlyToPath/bin/init.d/wildfly.conf"
+cp -R "$vDirName/ubuntu16.wildfly.conf" "$wildFlyToPath/bin/init.d/wildfly.conf"
 echo "New file:"
 ls -l "$wildFlyToPath/bin/init.d/wildfly.conf"
 
-echo "==== Copy bin/init.d/wildfly-init-debian.sh to $wildFlyToPath/bin/init.d/wildfly.conf dir ..."
+echo "==== Copy bin/init.d/wildfly-init-debian.sh to $wildFlyToPath/bin/init.d/wildfly dir ..."
 ls -l "$wildFlyToPath/bin/init.d/wildfly-init-debian.sh"
 cp -R "$wildFlyToPath/bin/init.d/wildfly-init-debian.sh" "/etc/init.d/wildfly"
 ls -l "/etc/init.d/wildfly"
 
-echo "==== Add wildfly user ..."
-adduser --home /home/wildfly --shell /bin/sh --disabled-password wildfly
-
 echo "==== Fixing permissions ..."
-chown -R wildfly:wildfly $wildFlyToPath
+chown -R ubuntu:ubuntu $wildFlyToPath
 chmod -R 0777 "$wildFlyToPath"
 
 echo "==== Stop and run VM again, please !!!"
