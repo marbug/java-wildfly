@@ -107,9 +107,11 @@ ls -l "$wildFlyToPath/bin/init.d/wildfly-init-debian.sh"
 cp -R "$wildFlyToPath/bin/init.d/wildfly-init-debian.sh" "/etc/init.d/wildfly"
 ls -l "/etc/init.d/wildfly"
 
+echo "==== Add wildfly user ..."
+adduser --home /home/wildfly --shell /bin/sh --disabled-password wildfly
+
 echo "==== Fixing permissions ..."
-chown -R ubuntu:ubuntu $programsPath
-# chmod -R 0777 "$wildFlyToPath/standalone/data/content"
+chown -R wildfly:wildfly $wildFlyToPath
 chmod -R 0777 "$wildFlyToPath"
 
 echo "==== Stop and run VM again, please !!!"
