@@ -8,6 +8,7 @@ TODO
 
 ## Useful links ##
 
+* [Docker community edition download](https://www.docker.com/community-edition)
 * [Vagrant download page](https://www.vagrantup.com/downloads.html)
 * [VirtualBox download page](https://www.virtualbox.org/wiki/Downloads)
 * [Windfly official site](http://wildfly.org/)
