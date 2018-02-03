@@ -3,8 +3,8 @@
 vFileName="$0"
 vDirName=`dirname $vFileName`
 
-windflyDirName="wildfly-8.2.1.Final"
-windflyDownloadUrl="http://download.jboss.org/wildfly/8.2.1.Final/wildfly-8.2.1.Final.zip"
+wildflyDirName="wildfly-8.2.1.Final"
+wildflyDownloadUrl="http://download.jboss.org/wildfly/8.2.1.Final/wildfly-8.2.1.Final.zip"
 jdkDirName="jdk1.8.0_161"
 programsPath="/home/ubuntu/programs"
 
@@ -32,32 +32,32 @@ echo "==== Go to downloads dir ..."
 cd $vDownloadsDir
 pwd
 
-echo "==== Checking $windflyDirName.zip ..."
-if [ -f "./$windflyDirName.zip" ]; then
+echo "==== Checking $wildflyDirName.zip ..."
+if [ -f "./$wildflyDirName.zip" ]; then
     echo "File is present"
 else
-    echo "Downloading $windflyDownloadUrl ..."
-    wget -q "$windflyDownloadUrl"
+    echo "Downloading $wildflyDownloadUrl ..."
+    wget -q "$wildflyDownloadUrl"
 fi
 
-echo "==== Unzipping $windflyDirName.zip ..."
-if [ -d "$vDownloadsDir/$windflyDirName" ]; then
-    echo "$vDownloadsDir/$windflyDirName is present. Skipping unzip ..."
+echo "==== Unzipping $wildflyDirName.zip ..."
+if [ -d "$vDownloadsDir/$wildflyDirName" ]; then
+    echo "$vDownloadsDir/$wildflyDirName is present. Skipping unzip ..."
 else
     apt-get install -y unzip
-    unzip $windflyDirName.zip
+    unzip $wildflyDirName.zip
 fi
 
 echo "==== Checking programs dir ..."
 echo $programsPath
 mkdir -p $programsPath
 
-echo "==== Copy $windflyDirName to programs dir ..."
-if [ -d "$programsPath/$windflyDirName" ]; then
-    echo "$programsPath/$windflyDirName is present. Skipped."
+echo "==== Copy $wildflyDirName to programs dir ..."
+if [ -d "$programsPath/$wildflyDirName" ]; then
+    echo "$programsPath/$wildflyDirName is present. Skipped."
 else
-    cp -R "./$windflyDirName" "$programsPath/$windflyDirName"
-    echo $programsPath/$windflyDirName
+    cp -R "./$wildflyDirName" "$programsPath/$wildflyDirName"
+    echo $programsPath/$wildflyDirName
 fi
 
 echo "==== Checking jdk dir ..."
@@ -81,19 +81,19 @@ else
     echo $programsPath/$jdkDirName
 fi
 
-echo "==== Copy windfly.conf to $programsPath/$windflyDirName/bin/init.d/windfly.conf dir ..."
+echo "==== Copy wildfly.conf to $programsPath/$wildflyDirName/bin/init.d/wildfly.conf dir ..."
 echo "Old file:"
-ls -l "$programsPath/$windflyDirName/bin/init.d/windfly.conf"
-cp -R "$vDirName/install/windfly.conf" "$programsPath/$windflyDirName/bin/init.d/windfly.conf"
+ls -l "$programsPath/$wildflyDirName/bin/init.d/wildfly.conf"
+cp -R "$vDirName/install/wildfly.conf" "$programsPath/$wildflyDirName/bin/init.d/wildfly.conf"
 echo "New file:"
-ls -l "$programsPath/$windflyDirName/bin/init.d/windfly.conf"
+ls -l "$programsPath/$wildflyDirName/bin/init.d/wildfly.conf"
 
 echo "==== Fixing permissions ..."
 chown -R ubuntu:ubuntu $programsPath
-# chmod -R 0777 "$programsPath/$windflyDirName/standalone/data/content"
-chmod -R 0777 "$programsPath/$windflyDirName"
+# chmod -R 0777 "$programsPath/$wildflyDirName/standalone/data/content"
+chmod -R 0777 "$programsPath/$wildflyDirName"
 
-echo "==== Running windfly ..."
-cd "$vDownloadsDir/$windflyDirName"
+echo "==== Running wildfly ..."
+cd "$vDownloadsDir/$wildflyDirName"
 pwd
 ./bin/standalone.sh &
