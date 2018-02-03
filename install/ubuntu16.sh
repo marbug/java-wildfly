@@ -108,6 +108,7 @@ chown -R ubuntu:ubuntu $wildFlyToPath
 chmod -R 0777 "$wildFlyToPath"
 
 echo "==== Running service ..."
-udpate-rc.d wildfly enable
+update-rc.d wildfly defaults
+update-rc.d wildfly enable
 service wildfly start
 service wildfly status
