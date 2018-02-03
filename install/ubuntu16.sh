@@ -82,11 +82,6 @@ export JAVA_HOME="$programsPath/$jdkDirName"
 echo "JAVA_HOME:" $JAVA_HOME
 echo "JAVA_HOME=\"$JAVA_HOME\"" >> /etc/environment
 
-echo "==== Setting JBOSS_HOME env variable ..."
-export JBOSS_HOME="$wildFlyToPath"
-echo "JBOSS_HOME:" $JBOSS_HOME
-echo "JBOSS_HOME=\"$JBOSS_HOME\"" >> /etc/environment
-
 echo "==== Copy $jdkDirName to programs dir ..."
 if [ -d "$programsPath/$jdkDirName" ]; then
     echo "$programsPath/$jdkDirName is present. Skipped."
