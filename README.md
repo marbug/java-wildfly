@@ -1,8 +1,21 @@
 # Wildfly (Java) #
 
+## About ##
+
+This repo has been created to help running wildfly in:
+
+* [Mac + Docker](mac-and-docker/README.md)
+* [Mac + Vagrant + VirtualBox](mac-and-vagrant-and-virtualbox/README.md)
+* [Windows + Vagrant + VirtualBox](windows-and-vagrant-and-virtualbox/README.md)
+* TODO
+
+environments.
+
 ## Prepare software ##
 
-Please ensure that you have installed the latest versions of Docker, Vagrant and VirtualBox.
+Please ensure that you have installed the latest versions of Docker, Vagrant and/or VirtualBox.
+
+See **Useful links** section below for more details.
 
 ## Windows + Vagrant vs Windows + Docker ##
 
