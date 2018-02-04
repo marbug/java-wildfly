@@ -3,12 +3,14 @@
 scriptFilePath="$0"
 scriptDirPath=`dirname $scriptFilePath`
 
-wildflyFromDir="wildfly-8.2.1.Final"
+wildflyFileName="wildfly-8.2.1.Final.zip"
+wildflyDirName="wildfly-8.2.1.Final"
 wildflyToDir="wildfly"
-wildflyDownloadUrl="http://download.jboss.org/wildfly/8.2.1.Final/wildfly-8.2.1.Final.zip"
+wildflyDownloadUrl="http://download.jboss.org/wildfly/8.2.1.Final/$wildflyFileName"
+jdkFileName="jdk-8u161-linux-x64.tar.gz"
 jdkDirName="jdk1.8.0_161"
 programsPath="/home/ubuntu/programs"
-wildFlyToPath="/opt/$wildflyToDir"
+wildflyToPath="/opt/$wildflyToDir"
 
 echo "==== File name:"
 echo $scriptFilePath
@@ -24,56 +26,71 @@ if [ -d /vagrant ]; then
 fi
 
 echo "==== Downloads dir:"
-vDownloadsDir="$scriptDirPath/../downloads"
-echo $vDownloadsDir
+downloadsDir="$scriptDirPath/../downloads"
+echo $downloadsDir
 
 echo "==== Checking vagrant dir ..."
 if [ -d /vagrant ]; then
     echo "/vagrant dir is present. Using:"
-    vDownloadsDir="/vagrant/downloads"
-    echo $vDownloadsDir
+    downloadsDir="/vagrant/downloads"
+    echo $downloadsDir
 fi
 
 echo "==== Creating downloads dir ..."
-mkdir -p $vDownloadsDir
+mkdir -p $downloadsDir
 
 echo "==== Go to downloads dir ..."
-cd $vDownloadsDir
+cd $downloadsDir
 pwd
 
-echo "==== Checking $wildflyFromDir.zip ..."
-if [ -f "./$wildflyFromDir.zip" ]; then
-    echo "File is present"
+echo "==== Extracting $jdkFileName ..."
+if [ -d "$downloadsDir/$jdkDirName" ]; then
+    echo "$downloadsDir/$jdkDirName is present. Skipping unzip ..."
 else
-    echo "Downloading $wildflyDownloadUrl ..."
-    wget -q "$wildflyDownloadUrl"
+    if [ -f "./$jdkFileName" ]; then
+        echo "$jdkFileName is present. Extracting ..."
+        tar xfz "./$jdkFileName"
+    else
+        echo "Download $jdkFileName from"
+        echo "    http://www.oracle.com/technetwork/java/javase/downloads/index.html"
+        echo "and move it to $downloadsDir"
+        exit 1
+    fi
 fi
 
-echo "==== Unzipping $wildflyFromDir.zip ..."
-if [ -d "$vDownloadsDir/$wildflyFromDir" ]; then
-    echo "$vDownloadsDir/$wildflyFromDir is present. Skipping unzip ..."
+echo "==== Extracting $wildflyFileName ..."
+if [ -d "$downloadsDir/$wildflyDirName" ]; then
+    echo "$downloadsDir/$wildflyDirName is present. Skipping unzip ..."
 else
-    apt-get install -y unzip
-    unzip $wildflyFromDir.zip
+    if [ -f "./$wildflyFileName" ]; then
+        echo "$wildflyFileName is present. Extracting ..."
+        apt-get install -y unzip
+        unzip "./$wildflyFileName"
+    else
+        echo "Download $wildflyFileName from"
+        echo "    $wildflyDownloadUrl"
+        echo "and move it to $downloadsDir"
+        exit 1
+    fi
 fi
 
 echo "==== Checking programs dir ..."
 echo $programsPath
 mkdir -p $programsPath
 
-echo "==== Copy $wildflyFromDir to programs dir ..."
-if [ -d "$wildFlyToPath" ]; then
-    echo "$wildFlyToPath is present. Skipped."
+echo "==== Copy $wildflyDirName to programs dir ..."
+if [ -d "$wildflyToPath" ]; then
+    echo "$wildflyToPath is present. Skipped."
 else
-    cp -R "./$wildflyFromDir" "$wildFlyToPath"
-    echo $wildFlyToPath
+    cp -R "./$wildflyDirName" "$wildflyToPath"
+    echo $wildflyToPath
 fi
 
 echo "==== Checking jdk dir ..."
-if [ -d "$vDownloadsDir/$jdkDirName" ]; then
-    echo "Dir $vDownloadsDir/$jdkDirName is present"
+if [ -d "$downloadsDir/$jdkDirName" ]; then
+    echo "Dir $downloadsDir/$jdkDirName is present"
 else
-    echo "Please, download and extract jdk to $vDownloadsDir/$jdkDirName"
+    echo "Please, download and extract jdk to $downloadsDir/$jdkDirName"
     exit 1
 fi
 
@@ -92,20 +109,20 @@ fi
 
 echo "==== Copy ubuntu16.wildfly.conf to /etc/default/wildfly ..."
 echo "Old file:"
-ls -l "$wildFlyToPath/bin/init.d/wildfly.conf"
+ls -l "$wildflyToPath/bin/init.d/wildfly.conf"
 cp -R "$scriptDirPath/ubuntu16.wildfly.conf" "/etc/default/wildfly"
 echo "New file:"
 ls -l "/etc/default/wildfly"
 
-echo "==== Copy bin/init.d/wildfly-init-debian.sh to $wildFlyToPath/bin/init.d/wildfly dir ..."
-ls -l "$wildFlyToPath/bin/init.d/wildfly-init-debian.sh"
-cp -R "$wildFlyToPath/bin/init.d/wildfly-init-debian.sh" "/etc/init.d/wildfly"
+echo "==== Copy bin/init.d/wildfly-init-debian.sh to $wildflyToPath/bin/init.d/wildfly dir ..."
+ls -l "$wildflyToPath/bin/init.d/wildfly-init-debian.sh"
+cp -R "$wildflyToPath/bin/init.d/wildfly-init-debian.sh" "/etc/init.d/wildfly"
 chmod 0700 /etc/init.d/wildfly
 ls -l "/etc/init.d/wildfly"
 
 echo "==== Fixing permissions ..."
-chown -R ubuntu:ubuntu $wildFlyToPath
-chmod -R 0777 "$wildFlyToPath"
+chown -R ubuntu:ubuntu $wildflyToPath
+chmod -R 0777 "$wildflyToPath"
 
 echo "==== Running service ..."
 update-rc.d wildfly defaults
