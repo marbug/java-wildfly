@@ -6,6 +6,7 @@ This repo has been created to help running wildfly in:
 
 * [Mac + Docker](mac-and-docker/README.md)
 * [Mac + Vagrant + VirtualBox](mac-and-vagrant-and-virtualbox/README.md)
+* [Windows + Docker](windows-and-docker/README.md)
 * [Windows + Vagrant + VirtualBox](windows-and-vagrant-and-virtualbox/README.md)
 * TODO
 

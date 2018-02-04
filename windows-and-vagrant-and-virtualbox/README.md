@@ -1,6 +1,10 @@
 # Wildfly (Java) / Windows + Vagrant + VirtualBox #
 
-## Windows+Vagrant vs Windows+Docker ##
+## TODO ##
+
+TODO
+
+## Issues ##
 
 ### VBoxManage.exe: error: VT-x is not available ###
 
@@ -13,10 +17,6 @@
 > You may need to reboot afterwords.
 
 > **Warning:** Vagrant with VirtualBox cannot work with Docker at the same time.
-
-## TODO ##
-
-TODO
 
 | Navigation               |
 | ------------------------ |
