@@ -12,7 +12,7 @@ RUN ls -l
 COPY downloads/wildfly-8.2.1.Final.zip .
 RUN ls -l /opt/wildfly-8.2.1.Final.zip
 RUN yum -y install unzip
-RUN zip /opt/wildfly-8.2.1.Final.zip
+RUN unzip /opt/wildfly-8.2.1.Final.zip
 RUN mv wildfly-8.2.1.Final wildfly
 RUN rm -fR /opt/wildfly-8.2.1.Final.zip
 RUN ls -l
