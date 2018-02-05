@@ -33,7 +33,7 @@ Run the following in terminal/console:
 
 ## Check ##
 
-Open [http://localhost:8080/] in browser.
+Open [http://localhost:8080/](http://localhost:8080/) in browser.
 
 ## Stop ##
 
