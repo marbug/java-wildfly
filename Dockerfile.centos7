@@ -30,6 +30,8 @@ RUN cp /opt/wildfly/bin/init.d/wildfly-init-redhat.sh /etc/init.d/wildfly
 RUN chmod 0700 /etc/init.d/wildfly
 RUN ls -l /etc/init.d/wildfly
 
+# TODO: install service
+
 ENV JAVA_HOME /opt/jdk
 
 EXPOSE 8080 9990
