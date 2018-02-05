@@ -1,5 +1,8 @@
 # Wildfly (Java) #
 
+* [bitbucket](https://bitbucket.org/marbug/java-wildfly)
+* [github](https://github.com/marbug/java-wildfly)
+
 ## About ##
 
 This repo has been created to help running wildfly in:
