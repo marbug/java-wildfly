@@ -15,11 +15,19 @@ Run the following in terminal/console:
 
     cp Dockerfile.ubuntu16 Dockerfile
 
+or
+
+    cp Dockerfile.centos7 Dockerfile
+
 ## Build iamge ##
 
 Run the following in terminal/console:
 
     docker image build -t java-wildfly .
+
+or
+
+    ./scripts/build-image.sh
 
 and see
 
@@ -30,6 +38,10 @@ and see
 Run the following in terminal/console:
 
     docker container run --rm -it -p 8080:8080 java-wildfly
+
+or
+
+    ./scripts/run-image.sh
 
 ## Check ##
 
