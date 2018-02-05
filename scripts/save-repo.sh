@@ -12,3 +12,7 @@ git push
 echo "==== Save to bitbucket ..."
 ./use-bitbucket.sh
 git push
+
+echo "==== Save to github ..."
+./use-github.sh
+git push
