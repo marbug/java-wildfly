@@ -19,17 +19,16 @@ RUN ls -l
 
 RUN chmod -R 0777 /opt/wildfly
 
-RUN echo -n > /etc/default/wildfly
-RUN echo "JAVA_HOME=\"/opt/jdk\"" >> /etc/default/wildfly
-RUN echo "JBOSS_HOME=\"/opt/wildfly\"" >> /etc/default/wildfly
-RUN echo "JBOSS_USER=root" >> /etc/default/wildfly
-RUN echo "JBOSS_OPTS=\"-b 0.0.0.0\"" >> /etc/default/wildfly
-RUN cat /etc/default/wildfly
-RUN cp /opt/wildfly/bin/init.d/wildfly-init-debian.sh /etc/init.d/wildfly
+RUN echo -n > /etc/default/wildfly.conf
+RUN echo "JAVA_HOME=\"/opt/jdk\"" >> /etc/default/wildfly.conf
+RUN echo "JBOSS_HOME=\"/opt/wildfly\"" >> /etc/default/wildfly.conf
+RUN echo "JBOSS_USER=root" >> /etc/default/wildfly.conf
+RUN echo "JBOSS_OPTS=\"-b 0.0.0.0\"" >> /etc/default/wildfly.conf
+RUN cat /etc/default/wildfly.conf
+
+RUN cp /opt/wildfly/bin/init.d/wildfly-init-redhat.sh /etc/init.d/wildfly
 RUN chmod 0700 /etc/init.d/wildfly
 RUN ls -l /etc/init.d/wildfly
-RUN update-rc.d wildfly defaults
-RUN update-rc.d wildfly enable
 
 ENV JAVA_HOME /opt/jdk
 
