@@ -19,7 +19,7 @@ or
 
     cp Dockerfile.centos7 Dockerfile
 
-## Build iamge ##
+## Build image ##
 
 Run the following in terminal/console:
 
