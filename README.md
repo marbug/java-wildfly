@@ -3,9 +3,15 @@
 * [bitbucket](https://bitbucket.org/marbug/java-wildfly)
 * [github](https://github.com/marbug/java-wildfly)
 
-## About ##
+## Prepare software ##
 
-This repo has been created to help running wildfly in:
+Please ensure that you have installed the latest versions of Docker, Vagrant and/or VirtualBox.
+
+See **Useful links** section below for more details.
+
+## Run ##
+
+It's possible to run Wildfly in:
 
 * [Mac + Docker](mac-and-docker/README.md)
 * [Mac + Vagrant + VirtualBox](mac-and-vagrant-and-virtualbox/README.md)
@@ -14,12 +20,6 @@ This repo has been created to help running wildfly in:
 * TODO
 
 environments.
-
-## Prepare software ##
-
-Please ensure that you have installed the latest versions of Docker, Vagrant and/or VirtualBox.
-
-See **Useful links** section below for more details.
 
 ## TODO ##
 
