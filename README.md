@@ -13,6 +13,10 @@ Current repo could be found on:
 
 [Read here](install/README.md)
 
+## Documentation ##
+
+[Read here](documentation/README.md)
+
 ## TODO ##
 
 TODO
