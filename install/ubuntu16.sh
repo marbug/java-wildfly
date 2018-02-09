@@ -21,7 +21,7 @@ wildflyConfPath="/etc/default/wildfly"
 JAVA_HOME="$jdkTargetPath"
 JBOSS_HOME="$wildflyTargetPath"
 JBOSS_USER="ubuntu"
-JBOSS_OPTS="-b 0.0.0.0"
+JBOSS_OPTS="-b 0.0.0.0 -bmanagement 0.0.0.0"
 
 echo "======== Checking needed directories ..."
 
