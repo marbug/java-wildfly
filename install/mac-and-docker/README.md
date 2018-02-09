@@ -53,4 +53,4 @@ Press **Ctrl** + **C** on keyboard.
 
 | Navigation               |
 | ------------------------ |
-| [Level up](../README.md) |
+| [Level up](../../README.md) |
