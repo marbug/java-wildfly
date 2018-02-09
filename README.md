@@ -11,7 +11,7 @@ Current repo could be found on:
 
 ## Install ##
 
-Read here [install/README.md]
+[Read here](install/README.md)
 
 ## TODO ##
 
