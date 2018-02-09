@@ -2,7 +2,7 @@
 
 ## About ##
 
-This repo was created to help learning **Wildfly** and to run it in virtual environments.
+This repo was created to help learning [Wildfly](http://wildfly.org/) and to run it in virtual environments.
 
 Current repo could be found on:
 
