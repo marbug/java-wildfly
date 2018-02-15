@@ -33,6 +33,8 @@ RUN update-rc.d wildfly enable
 
 ENV JAVA_HOME /opt/jdk
 
+RUN cd /opt/wildfly/bin && ./add-user.sh -u wildfly-admin -p "M5*k4rEV+WvzF70x" -e
+
 EXPOSE 8080 9990
 
 CMD ["sh", "/opt/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
