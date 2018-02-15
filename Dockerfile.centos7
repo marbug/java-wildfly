@@ -23,7 +23,7 @@ RUN echo -n > /etc/default/wildfly.conf
 RUN echo "JAVA_HOME=\"/opt/jdk\"" >> /etc/default/wildfly.conf
 RUN echo "JBOSS_HOME=\"/opt/wildfly\"" >> /etc/default/wildfly.conf
 RUN echo "JBOSS_USER=root" >> /etc/default/wildfly.conf
-RUN echo "JBOSS_OPTS=\"-b 0.0.0.0\"" >> /etc/default/wildfly.conf
+RUN echo "JBOSS_OPTS=\"-b 0.0.0.0 -bmanagement 0.0.0.0\"" >> /etc/default/wildfly.conf
 RUN cat /etc/default/wildfly.conf
 
 RUN cp /opt/wildfly/bin/init.d/wildfly-init-redhat.sh /etc/init.d/wildfly
