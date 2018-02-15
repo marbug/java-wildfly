@@ -9,25 +9,15 @@ Download the following files and put them into the **./downloads** folder:
 
 ## Prepare Dockerfile ##
 
-### wildfly in ubuntu16 container ###
-
-Run the following in terminal/console:
-
-    cp Dockerfile.ubuntu16 Dockerfile
-
-or
-
-    cp Dockerfile.centos7 Dockerfile
-
 ## Build image ##
 
 Run the following in terminal/console:
 
-    docker image build -t java-wildfly .
+    ./scripts/build-image.sh centos7
 
 or
 
-    ./scripts/build-image.sh
+    ./scripts/build-image.sh ubuntu16
 
 and see
 
