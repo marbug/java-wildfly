@@ -27,10 +27,6 @@ and see
 
 Run the following in terminal/console:
 
-    docker container run --rm -it -p 8080:8080 java-wildfly
-
-or
-
     ./scripts/run-image.sh
 
 ## Check ##
