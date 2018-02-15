@@ -35,4 +35,4 @@ ENV JAVA_HOME /opt/jdk
 
 EXPOSE 8080 9990
 
-CMD ["sh", "/opt/wildfly/bin/standalone.sh", "-b", "0.0.0.0"]
+CMD ["sh", "/opt/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
