@@ -36,6 +36,10 @@ or
 ## Check ##
 
 Open [http://localhost:8080/](http://localhost:8080/) in browser.
+Open admin console [http://localhost:9990/](http://localhost:9990/) in browser.
+
+* **Username:** wildfly-admin
+* **Password:** M5*k4rEV+WvzF70x
 
 ## Stop ##
 
