@@ -33,7 +33,7 @@ RUN update-rc.d wildfly enable
 
 ENV JAVA_HOME /opt/jdk
 
-RUN cd /opt/wildfly/bin && ./add-user.sh -u wildfly-admin -p "M5*k4rEV+WvzF70x" -e
+RUN cd /opt/wildfly/bin && ./add-user.sh -u wildfly-admin -p "M5*k4rEV+WvzF70x" -e -s
 
 EXPOSE 8080 9990
 
