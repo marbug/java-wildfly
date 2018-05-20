@@ -127,5 +127,6 @@
       </dependencies>
       <modules>
       	<module>marbug-model</module>
+      	<module>marbug-resource</module>
       </modules>
 </project>
