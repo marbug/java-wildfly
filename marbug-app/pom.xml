@@ -125,4 +125,7 @@
           <scope>test</scope>
         </dependency>
       </dependencies>
+      <modules>
+      	<module>marbug-model</module>
+      </modules>
 </project>
