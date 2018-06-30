@@ -8,6 +8,12 @@ Run
 
 and open [http://localhost:8080/](http://localhost:8080/)
 
+### 8.2.1.Final ###
+
+Run
+
+    docker run -p 8080:8080 -it jboss/wildfly:8.2.1.Final
+
 ## TODO ##
 
 TODO
