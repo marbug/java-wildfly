@@ -36,6 +36,10 @@ TODO
 
     docker exec -it wildfly bash
 
+## Wildfly path ##
+
+WildFly is installed in the **/opt/jboss/wildfly** directory.
+
 ## Useful links ##
 
 * [Official JBOSS Wildfly Docker page](https://hub.docker.com/r/jboss/wildfly/)
