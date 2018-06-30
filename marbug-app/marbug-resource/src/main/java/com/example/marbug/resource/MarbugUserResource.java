@@ -1,22 +1,21 @@
 package com.example.marbug.resource;
 
 import com.example.marbug.model.MarbugUser;
-import io.swagger.annotations.ApiOperation;
-
+import io.swagger.v3.oas.annotations.Operation;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.UriInfo;
+import javax.ws.rs.Produces;
 
 @Path("/v1")
+@Produces({"application/json", "application/xml"})
 public class MarbugUserResource {
-
-  @Context
-  private UriInfo uriInfo;
 
   @GET
   @Path("/file")
-  @ApiOperation(value = "Add/register new user")
+  @Operation(
+          summary = "Add/register new user",
+          description = "Allows to add (i.e. register) new user"
+  )
   public MarbugUser add() {
     MarbugUser user = new MarbugUser();
     return user;
