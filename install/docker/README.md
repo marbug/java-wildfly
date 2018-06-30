@@ -32,6 +32,10 @@ Same with name **wildfly**
 
 TODO
 
+## SSH to docker container ##
+
+    docker exec -it wildfly bash
+
 ## Useful links ##
 
 * [Official JBOSS Wildfly Docker page](https://hub.docker.com/r/jboss/wildfly/)
