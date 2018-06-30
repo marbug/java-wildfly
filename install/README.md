@@ -6,6 +6,10 @@ TODO
 
 ## Container/VM installation ##
 
+* [Docker](docker/README.md)
+
+## Custom Container/VM installation ##
+
 Please ensure that you have installed the latest versions of Docker, Vagrant and/or VirtualBox.
 
 See **Useful links** section below for more details.
