@@ -36,6 +36,11 @@ TODO
 
     docker exec -it wildfly bash
 
+## Mount directory ##
+
+    mkdir -p ./deployments
+    docker run --name wildfly -p 8080:8080 -v $(pwd)/deployments:/opt/jboss/wildfly/standalone/deployments -it jboss/wildfly:8.2.1.Final
+
 ## Wildfly path ##
 
 WildFly is installed in the **/opt/jboss/wildfly** directory.
