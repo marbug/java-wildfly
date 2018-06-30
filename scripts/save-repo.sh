@@ -5,9 +5,9 @@ vCurrentDir=`dirname $0`
 echo $vCurrentDir
 cd $vCurrentDir
 
-echo "==== Save to ququdev ..."
-./use-ququdev.sh
-git push
+# echo "==== Save to ququdev ..."
+# ./use-ququdev.sh
+# git push
 
 echo "==== Save to bitbucket ..."
 ./use-bitbucket.sh
