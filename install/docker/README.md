@@ -39,6 +39,7 @@ TODO
 ## Mount directory ##
 
     mkdir -p ./deployments
+    docker container rm wildfly
     docker run --name wildfly -p 8080:8080 -v $(pwd)/deployments:/opt/jboss/wildfly/standalone/deployments -it jboss/wildfly:8.2.1.Final
 
 ## Wildfly path ##
