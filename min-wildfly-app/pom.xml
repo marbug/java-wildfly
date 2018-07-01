@@ -61,13 +61,32 @@
                     <groupId>com.example</groupId>
                     <artifactId>min-wildfly-model</artifactId>
                     <version>${project.version}</version>
+                    <type>ejb</type>
+            </dependency>
+            <dependency>
+                    <groupId>com.example</groupId>
+                    <artifactId>min-wildfly-model</artifactId>
+                    <version>${project.version}</version>
                     <type>test-jar</type>
+            </dependency>
+            <dependency>
+                    <groupId>com.example</groupId>
+                    <artifactId>min-wildfly-resource-war</artifactId>
+                    <version>${project.version}</version>
+                    <type>war</type>
+            </dependency>
+            <dependency>
+                    <groupId>com.example</groupId>
+                    <artifactId>min-wildfly-resource-war</artifactId>
+                    <version>${project.version}</version>
+                    <type>pom</type>
             </dependency>
       </dependencies>
   </dependencyManagement>
   <modules>
   	<module>min-wildfly-model</module>
-        <module>min-wildfly-resource</module>
-        <module>min-wildfly-resource-war</module>
+    <module>min-wildfly-resource</module>
+    <module>min-wildfly-resource-war</module>
+    <module>min-wildfly-ear</module>
   </modules>
 </project>

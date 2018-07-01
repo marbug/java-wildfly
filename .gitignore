@@ -7,3 +7,4 @@ downloads
 Dockerfile
 repo
 /min-wildfly-app/min-wildfly-resource-war/target/
+/min-wildfly-app/min-wildfly-ear/target/
