@@ -68,5 +68,6 @@
   <modules>
   	<module>min-wildfly-model</module>
         <module>min-wildfly-resource</module>
+        <module>min-wildfly-resource-war</module>
   </modules>
 </project>
