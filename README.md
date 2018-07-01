@@ -13,6 +13,13 @@ Current repo could be found on:
 
 [Read here](install/README.md)
 
+## Min app ##
+
+* TODO
+* Open [http://localhost:8080/library/api/v1/user/sign-in](http://localhost:8080/library/api/v1/user/sign-in) and see
+
+        {"id":12345,"username":"Some username","password":"Some password","email":"Some email"}
+
 ## Documentation ##
 
 [Read here](documentation/README.md)
