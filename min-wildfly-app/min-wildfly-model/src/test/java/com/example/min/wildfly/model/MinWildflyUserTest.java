@@ -24,5 +24,38 @@ public class MinWildflyUserTest {
 
         assertEquals("id must be", value, model.getId());
     }
-        
+
+    @Test
+    public void setUsernameTest() {
+        String username = model.getUsername();
+        assertNull("username must be null", username);
+
+        String value = "Some username value";
+        model.setUsername(value);
+
+        assertEquals("username must be", value, model.getUsername());
+    }
+
+    @Test
+    public void setPasswordTest() {
+        String username = model.getPassword();
+        assertNull("username must be null", username);
+
+        String value = "Some username value";
+        model.setPassword(value);
+
+        assertEquals("username must be", value, model.getPassword());
+    }
+
+    @Test
+    public void setEmailTest() {
+        String username = model.getEmail();
+        assertNull("username must be null", username);
+
+        String value = "Some username value";
+        model.setEmail(value);
+
+        assertEquals("username must be", value, model.getEmail());
+    }
+
 }
